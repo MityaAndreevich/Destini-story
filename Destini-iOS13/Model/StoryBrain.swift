@@ -41,19 +41,10 @@ struct StoryBrain {
             choice1: "The", choice1Destination: 0,
             choice2: "End", choice2Destination: 0
         )
-
     ]
     
     var choiceDestination = 0
-    
-    mutating func nextStory(_ userChoice: String) {
-        if userChoice == stories[choiceDestination].choice1 {
-            choiceDestination = stories[choiceDestination].choice1Destination
-        } else {
-            choiceDestination = stories[choiceDestination].choice2Destination
-        }
-    }
-    
+    //MARK: - Methods
     func nextStory() -> String {
         stories[choiceDestination].title
     }
@@ -64,6 +55,14 @@ struct StoryBrain {
     
     func getChoices2() -> String {
         stories[choiceDestination].choice2
+    }
+    
+    mutating func nextStory(_ userChoice: String) {
+        if userChoice == stories[choiceDestination].choice1 {
+            choiceDestination = stories[choiceDestination].choice1Destination
+        } else {
+            choiceDestination = stories[choiceDestination].choice2Destination
+        }
     }
 }
 

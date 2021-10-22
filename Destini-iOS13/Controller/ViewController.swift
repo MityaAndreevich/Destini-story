@@ -23,7 +23,6 @@ class ViewController: UIViewController {
 
     @IBAction func choiceMade(_ sender: UIButton) {
         storyBrain.nextStory(sender.currentTitle!)
-        
         updateUI()
     }
     
@@ -31,9 +30,6 @@ class ViewController: UIViewController {
         storyLabel.text = storyBrain.nextStory()
         choice1Button.setTitle(storyBrain.getChoices1(), for: .normal)
         choice2Button.setTitle(storyBrain.getChoices2(), for: .normal)
-        
-    
     }
-    
 }
 
